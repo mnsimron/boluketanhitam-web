@@ -129,7 +129,7 @@ function Navbar() {
       : "bg-transparent",
   ].join(" ");
   const desktopLinksClassName = [
-    "hidden items-center gap-8 text-sm font-semibold md:flex",
+    "hidden items-center gap-8 text-base font-semibold md:flex",
     scrolled ? "text-brand-primary/75" : "text-brand-secondary/80",
   ].join(" ");
   const menuButtonClassName = [
@@ -178,7 +178,7 @@ function Navbar() {
             href={whatsappInquiryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap rounded-full bg-brand-gold px-3 py-2 text-[11px] font-bold text-brand-primary transition hover:scale-105 hover:bg-[#e0b17f] active:scale-95 sm:px-5 sm:py-2.5 sm:text-xs"
+            className="whitespace-nowrap rounded-full bg-brand-gold px-3 py-2 text-base font-semibold text-brand-primary transition hover:scale-105 hover:bg-[#e0b17f] active:scale-95 sm:px-5 sm:py-2.5"
           >
             Pesan Sekarang
           </a>
@@ -196,7 +196,7 @@ function Navbar() {
 
       {menuOpen && (
         <div className="border-t border-brand-primary/10 px-6 pb-5 pt-2 md:hidden">
-          <div className="flex flex-col gap-4 text-sm font-semibold text-brand-primary/75">
+          <div className="flex flex-col gap-4 text-base font-semibold text-brand-primary/75">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} onClick={handleMenuClose}>
                 {link.label}
@@ -225,12 +225,12 @@ function HeroSection() {
           <p className="mb-6 font-script text-2xl text-brand-gold">
             Dibuat dengan hati, dari Bogor
           </p>
-          <h1 className="font-serif text-4xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-5xl lg:text-[5.35rem]">
+          <h1 className="font-serif text-5xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
             Cita rasa otentik<span className="text-brand-gold">...</span>
             <br />
             <span className="text-brand-gold">Bikin nagih</span> dari gigitan pertama.
           </h1>
-          <p className="mt-7 max-w-md text-base leading-7 text-brand-secondary/70">
+          <p className="mt-7 max-w-md text-lg leading-relaxed text-brand-secondary/70">
             Bolu ketan hitam yang lembut, legit, dan selalu berhasil menghangatkan
             suasana. Resep rumahan, rasa yang tak terlupakan.
           </p>
@@ -238,13 +238,13 @@ function HeroSection() {
             href={whatsappInquiryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-full bg-brand-secondary px-4 py-3 text-xs font-bold text-brand-primary transition hover:scale-105 hover:bg-white active:scale-95 sm:mt-9 sm:gap-3 sm:px-6 sm:py-3.5 sm:text-sm"
+            className="mt-8 inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-full bg-brand-secondary px-4 py-3 text-base font-semibold text-brand-primary transition hover:scale-105 hover:bg-white active:scale-95 sm:mt-9 sm:gap-3 sm:px-6 sm:py-3.5"
           >
             <FaWhatsapp className="text-lg text-[#25D366]" />
             Hubungi Kami Sekarang
             <HiArrowUpRight />
           </a>
-          <div className="mt-10 flex items-center gap-3 text-xs text-brand-secondary/55 sm:mt-12 sm:gap-4">
+          <div className="mt-10 flex items-center gap-3 text-base leading-relaxed text-brand-secondary/55 sm:mt-12 sm:gap-4">
             <span className="h-px w-8 shrink-0 bg-brand-gold sm:w-10" />
             Dipanggang segar setiap hari
           </div>
@@ -266,7 +266,7 @@ function HeroSection() {
           </div>
           <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/15 bg-brand-primary/80 px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
             <p className="font-serif text-2xl text-brand-gold">4.9/5</p>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-brand-secondary/60">
+            <p className="text-base uppercase leading-relaxed tracking-[0.18em] text-brand-secondary/60">
               dari pelanggan kami
             </p>
           </div>
@@ -284,10 +284,10 @@ function IntroSection() {
         <div>
           <p className="font-script text-xl text-brand-burgundy">Dari Resep Keluarga</p>
           <h2 className="section-title mt-4">Untuk Momen yang Lebih Bermakna</h2>
-          <p className="mt-6 max-w-lg leading-7 text-brand-primary/65">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-brand-primary/65">
             Bukan sekadar soal rasa, tapi tentang kasih sayang, kehangatan, dan nostalgia masa kecil yang ingin kami bagikan kembali di setiap gigitan.
           </p>
-          <p className="mt-5 max-w-lg leading-7 text-brand-primary/65">
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-brand-primary/65">
             Kami tidak hanya ingin berbisnis. Kami ingin UMKM rumahan ini terus bertumbuh, naik kelas, dan bisa ikut memutar roda ekonomi serta membuka lapangan pekerjaan bagi lebih banyak orang.
           </p>
         </div>
@@ -300,7 +300,7 @@ function IntroSection() {
               alt="Bolu ketan hitam disajikan di atas meja"
             />
           </div>
-          <p className="absolute -bottom-5 right-0 rounded-full bg-brand-burgundy px-3 py-2 text-sm font-script text-brand-secondary shadow-lg sm:-right-3 sm:px-5 sm:py-3 sm:text-lg">
+          <p className="absolute -bottom-5 right-0 rounded-full bg-brand-burgundy px-3 py-2 text-base font-script text-brand-secondary shadow-lg sm:-right-3 sm:px-5 sm:py-3 sm:text-lg">
             a little joy, everyday
           </p>
         </div>
@@ -342,7 +342,7 @@ function TrustSection() {
             <p className="eyebrow">Kenapa kami</p>
             <h2 className="section-title mt-3">Dibuat untuk dipercaya.</h2>
           </div>
-          <span className="hidden font-script text-xl text-brand-burgundy sm:block">
+          <span className="hidden font-script text-2xl text-brand-burgundy sm:block">
             good things take time
           </span>
         </div>
@@ -366,9 +366,9 @@ function ProductItem({ product }: { product: Product }) {
         <ImageFrame src={product.image} alt={product.name} />
       </div>
       <div>
-        <h3 className="font-serif text-2xl font-bold text-brand-primary">{product.name}</h3>
-        <p className="mt-1 text-sm font-semibold text-brand-burgundy">{product.detail}</p>
-        <p className="mt-3 max-w-lg text-sm leading-6 text-brand-primary/55">
+        <h3 className="font-serif text-3xl font-bold text-brand-primary">{product.name}</h3>
+        <p className="mt-1 text-base font-semibold leading-relaxed text-brand-burgundy">{product.detail}</p>
+        <p className="mt-3 max-w-lg text-base leading-relaxed text-brand-primary/55">
           {product.notes}
         </p>
       </div>
@@ -376,7 +376,7 @@ function ProductItem({ product }: { product: Product }) {
         href={orderUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-brand-primary px-4 py-2.5 text-xs font-bold text-brand-secondary transition hover:scale-105 hover:bg-brand-burgundy active:scale-95 sm:px-5 sm:py-3 sm:text-sm"
+        className="inline-flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-brand-primary px-4 py-2.5 text-base font-semibold text-brand-secondary transition hover:scale-105 hover:bg-brand-burgundy active:scale-95 sm:px-5 sm:py-3"
       >
         Pesan
         <HiArrowUpRight />
@@ -427,7 +427,7 @@ function OccasionCard({
     >
       <ImageFrame src={image} alt={title} />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/85 via-transparent to-transparent" />
-      <h3 className="absolute bottom-5 left-5 right-4 font-serif text-xl font-bold sm:text-2xl">
+      <h3 className="absolute bottom-5 left-5 right-4 font-serif text-2xl font-bold sm:text-3xl">
         {title}
       </h3>
     </motion.article>
@@ -467,15 +467,15 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             {testimonial.initials}
           </span>
           <div>
-            <h3 className="text-sm font-bold text-brand-primary">{testimonial.name}</h3>
-            <p className="text-xs text-brand-primary/45">{testimonial.time}</p>
+            <h3 className="text-base font-semibold text-brand-primary">{testimonial.name}</h3>
+            <p className="text-base leading-relaxed text-brand-primary/45">{testimonial.time}</p>
           </div>
         </div>
-        <span className="whitespace-nowrap text-sm text-brand-gold sm:text-base" aria-label="5 dari 5 bintang">
+        <span className="whitespace-nowrap text-base text-brand-gold" aria-label="5 dari 5 bintang">
           ★★★★★
         </span>
       </div>
-      <p className="mt-6 font-serif text-lg leading-7 text-brand-primary/80">
+          <p className="mt-6 font-serif text-lg leading-relaxed text-brand-primary/80">
         “{testimonial.quote}”
       </p>
     </article>
@@ -524,7 +524,7 @@ function ContactSection() {
             Sapa kami,
             <br />kami siap membantu.
           </h2>
-          <div className="mt-8 space-y-5 text-sm text-brand-primary/70 sm:mt-9">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-brand-primary/70 sm:mt-9">
             {contactDetails.map(({ icon: Icon, label }) => (
               <p key={label} className="flex items-center gap-4">
                 <Icon className="text-xl text-brand-burgundy" />
@@ -536,7 +536,7 @@ function ContactSection() {
             href={whatsappInquiryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-9 inline-flex items-center gap-3 rounded-full bg-brand-burgundy px-6 py-3.5 text-sm font-bold text-brand-secondary transition hover:scale-105 active:scale-95"
+            className="mt-9 inline-flex items-center gap-3 rounded-full bg-brand-burgundy px-6 py-3.5 text-base font-semibold text-brand-secondary transition hover:scale-105 active:scale-95"
           >
             <FaWhatsapp className="text-lg" />
             Chat WhatsApp
@@ -570,7 +570,7 @@ export default function Home() {
       <OccasionSection />
       <TestimonialMarquee />
       <ContactSection />
-      <footer className="bg-brand-primary px-6 py-8 text-center text-xs text-brand-secondary/50">
+      <footer className="bg-brand-primary px-6 py-8 text-center text-base leading-relaxed text-brand-secondary/50">
         © 2024 Bolu Ketan Hitam Bogor. Dibuat dengan rasa.
       </footer>
     </main>
