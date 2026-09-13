@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { HiArrowUpRight, HiCheck, HiEnvelope, HiMapPin } from "react-icons/hi2";
+import { HiArrowUpRight, HiEnvelope, HiMapPin } from "react-icons/hi2";
 
 interface Product {
   name: string;
@@ -35,9 +35,9 @@ const images = {
 };
 
 const products: Product[] = [
-  { name: "Bolu Reguler", detail: "20 × 20 cm · 8–10 potong", notes: "Lembut, legit, dengan wangi santan yang hangat.", image: images.sliced },
-  { name: "Bolu Small", detail: "15 × 15 cm · 4–6 potong", notes: "Ukuran manis untuk teman ngopi atau oleh-oleh.", image: "/boluketanhitam-11.png" },
-  { name: "Bolu Custom", detail: "Sesuai pesanan · Mulai 10 box", notes: "Kemasan personal untuk hari yang ingin dikenang.", image: "/boluketanhitam-10.png" },
+  { name: "Reguler (Best Seller)", detail: "Ukuran 23 x 11,5 cm", notes: "Lumer, Original, Keju, Almond", image: images.sliced },
+  { name: "Small", detail: "Ukuran 20 x 7,5 cm", notes: "Lumer, Original, Keju, Almond", image: "/boluketanhitam-11.png" },
+  { name: "Varian Custom (Birthday Cake)", detail: "Khusus Order H-2 & Pick Up Mandiri", notes: "Keju-Almond, Lumer-Keju, Lumer-Almond", image: "/boluketanhitam-10.png" },
 ];
 
 const testimonials: Testimonial[] = [
@@ -57,22 +57,22 @@ const navLinks = [
 const trustPoints = [
   {
     title: "200+ Review",
-    text: "Dipercaya dan disukai pelanggan",
+    text: "200+ Review Bintang 5 di Google. Ini adalah bukti cerita mereka yang sudah mencoba, puas, dan kembali order lagi karena rasanya benar-benar sesuai harapan.",
     image: images.coffee,
   },
   {
     title: "2.500+ Box",
-    text: "Menemani berbagai momen",
+    text: "Terjual Lebih dari 2.500+ Box. Ribuan box sudah sampai ke meja keluarga, menemani sore yang dingin, jadi kejutan ulang tahun, hingga hampers untuk orang tersayang.",
     image: "/boluketanhitam-13.png",
   },
   {
     title: "Halal MUI",
-    text: "Tenang menikmatinya",
+    text: "Bersertifikat Halal MUI. Telah bersertifikat halal resmi dari MUI dengan ID 32410022479760525, diproduksi dengan standar halal yang jelas dan terjamin.",
     image: "/boluketanhitam-14.png",
   },
   {
     title: "Terdaftar PIRT",
-    text: "Standar mutu yang terjaga",
+    text: "Terdaftar PIRT Dinas Kesehatan. Diproduksi secara higienis, kami telah terdaftar dengan nomor P-IRT 8053271011479-30 dan memenuhi standar yang berlaku.",
     image: "/pirt-serti.png",
   },
 ];
@@ -278,33 +278,18 @@ function HeroSection() {
 }
 
 function IntroSection() {
-  const highlights = [
-    "Resep Jadul turun-temurun",
-    "Bahan pilihan tanpa pengawet",
-    "Dipersiapkan fresh sesuai pesanan",
-  ];
-
   return (
     <section id="cerita" className="bg-brand-secondary px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-10 sm:gap-16 lg:grid-cols-2">
         <div>
-          <p className="eyebrow">Tentang Bolu</p>
-          <h2 className="section-title mt-4">Untuk momen yang lebih bermakna.</h2>
+          <p className="font-script text-xl text-brand-burgundy">Dari Resep Keluarga</p>
+          <h2 className="section-title mt-4">Untuk Momen yang Lebih Bermakna</h2>
           <p className="mt-6 max-w-lg leading-7 text-brand-primary/65">
-            Kami percaya, kue yang baik bukan hanya soal rasa. Ia hadir di tengah
-            percakapan, dikirim sebagai tanda sayang, dan menjadi bagian kecil dari
-            cerita yang besar.
+            Bukan sekadar soal rasa, tapi tentang kasih sayang, kehangatan, dan nostalgia masa kecil yang ingin kami bagikan kembali di setiap gigitan.
           </p>
-          <ul className="mt-8 space-y-4 text-sm font-semibold text-brand-primary/80">
-            {highlights.map((highlight) => (
-              <li key={highlight} className="flex items-center gap-2 sm:gap-3">
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-gold/20 text-brand-burgundy">
-                  <HiCheck />
-                </span>
-                {highlight}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-5 max-w-lg leading-7 text-brand-primary/65">
+            Kami tidak hanya ingin berbisnis. Kami ingin UMKM rumahan ini terus bertumbuh, naik kelas, dan bisa ikut memutar roda ekonomi serta membuka lapangan pekerjaan bagi lebih banyak orang.
+          </p>
         </div>
 
         <div className="relative mx-auto h-[320px] w-full max-w-md sm:h-[420px]">
@@ -344,7 +329,7 @@ function TrustCard({
       className="overflow-hidden rounded-2xl bg-brand-secondary shadow-[0_12px_30px_rgba(56,34,29,0.06)]"
     >
       <div className="relative h-36">
-        <ImageFrame src={image} alt={`${title}. ${text}`} />
+        <ImageFrame src={image} alt={text} />
       </div>
     </motion.article>
   );
