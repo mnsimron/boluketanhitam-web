@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bolu Ketan Hitam Bogor | Cita Rasa Otentik",
-  description: "Bolu ketan hitam lembut dan legit, dibuat segar dari Bogor untuk momen yang lebih bermakna.",
+  title: "Bolu Ketan Hitam Bogor | Resep Jadul",
+  description: "Bolu ketan hitam lembut dan legit, dibuat dengan resep jadul yang turun temurun. Nikmati cita rasa autentik bolu ketan hitam Bogor yang lezat dan menggugah selera.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
