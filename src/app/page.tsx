@@ -310,12 +310,10 @@ function IntroSection() {
 }
 
 function TrustCard({
-  title,
   text,
   image,
   index,
 }: {
-  title: string;
   text: string;
   image: string;
   index: number;
