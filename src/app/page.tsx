@@ -13,20 +13,13 @@ interface Product {
   image: string;
 }
 
-interface Testimonial {
-  initials: string;
-  name: string;
-  time: string;
-  quote: string;
-}
-
 const imageBase = "https://images.unsplash.com";
 const whatsappNumber = "6289650427923";
 const whatsappInquiryUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Halo, saya ingin bertanya tentang Bolu Ketan Hitam Bogor.",
 )}`;
 const images = {
-  hero: "/boluketanhitam-4.png",
+  hero: "/bolu-hero.png",
   sliced: "/boluketanhitam-1.png",
   family: "/boluketanhitam-5.png",
   gift: "/pirt1.png",
@@ -35,16 +28,10 @@ const images = {
 };
 
 const products: Product[] = [
-  { name: "Reguler (Best Seller)", detail: "Ukuran 23 x 11,5 cm", notes: "Lumer, Original, Keju, Almond", image: images.sliced },
-  { name: "Small", detail: "Ukuran 20 x 7,5 cm", notes: "Lumer, Original, Keju, Almond", image: "/boluketanhitam-11.png" },
-  { name: "Varian Custom (Birthday Cake)", detail: "Khusus Order H-2 & Pick Up Mandiri", notes: "Keju-Almond, Lumer-Keju, Lumer-Almond", image: "/boluketanhitam-10.png" },
-];
-
-const testimonials: Testimonial[] = [
-  { initials: "NS", name: "Nadia S.", time: "2 hari lalu", quote: "Teksturnya lembut banget dan rasa ketan hitamnya benar-benar terasa. Satu box habis di kantor!" },
-  { initials: "AR", name: "Ari R.", time: "1 minggu lalu", quote: "Packaging-nya cantik, aman sampai Jakarta. Cocok sekali buat oleh-oleh dari Bogor." },
-  { initials: "DM", name: "Dinda M.", time: "2 minggu lalu", quote: "Pesan custom untuk ulang tahun, hasilnya manis dan rapi. Timnya juga cepat membantu." },
-  { initials: "FK", name: "Fajar K.", time: "3 minggu lalu", quote: "Rasa rumahan premium. Tidak terlalu manis, jadi enak dimakan bersama kopi." },
+  { name: "Reguler", detail: "Ukuran 23 x 11,5 cm", notes: "Lumer, Original, Keju, Almond", image: "/bolu-reguler.jpg" },
+  { name: "Small", detail: "Ukuran 20 x 7,5 cm", notes: "Lumer, Original, Keju, Almond", image: "/bolu-small.jpg" },
+  { name: "Bolu Ketan Hitam Lumer", detail: "Best Seller", notes: "Tekstur lembut dengan sensasi lumer yang kaya rasa di setiap gigitan.", image: "/bolu-lumer.jpg" },
+  { name: "Varian Custom (Birthday Cake)", detail: "Khusus Order H-2 & Pick Up Mandiri", notes: "Keju-Almond, Lumer-Keju, Lumer-Almond", image: "/bolu-birthday.jpg" },
 ];
 
 const navLinks = [
@@ -265,8 +252,16 @@ function HeroSection() {
             />
           </div>
           <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/15 bg-brand-primary/80 px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
-            <p className="font-serif text-2xl text-brand-gold">4.9/5</p>
-            <p className="text-base uppercase leading-relaxed tracking-[0.18em] text-brand-secondary/60">
+            <div className="flex items-center gap-2">
+              <p className="font-serif text-2xl leading-none text-brand-gold">5/5</p>
+              <span
+                className="text-sm tracking-[0.16em] text-brand-gold"
+                aria-label="5 dari 5 bintang"
+              >
+                ★★★★★
+              </span>
+            </div>
+            <p className="mt-2 border-t border-brand-secondary/15 pt-2 text-[11px] uppercase leading-tight tracking-[0.16em] text-brand-secondary/60">
               dari pelanggan kami
             </p>
           </div>
@@ -359,13 +354,25 @@ function TrustSection() {
 function ProductItem({ product }: { product: Product }) {
   const orderMessage = `Halo, saya ingin memesan ${product.name} (${product.detail}).`;
   const orderUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
+  const isBestSeller = product.detail === "Best Seller";
+  const cardClassName = [
+    "grid gap-4 py-6 sm:gap-6 sm:py-7 md:grid-cols-[180px_1fr_auto] md:items-center",
+    isBestSeller
+      ? "my-3 rounded-2xl border-2 border-brand-gold bg-brand-gold/10 px-4 shadow-[0_12px_30px_rgba(212,163,115,0.24)] sm:px-5"
+      : "",
+  ].join(" ");
 
   return (
-    <article className="grid gap-4 py-6 sm:gap-6 sm:py-7 md:grid-cols-[180px_1fr_auto] md:items-center">
+    <article className={cardClassName}>
       <div className="relative h-32 overflow-hidden rounded-2xl sm:h-36">
         <ImageFrame src={product.image} alt={product.name} />
       </div>
       <div>
+        {isBestSeller && (
+          <span className="mb-2 inline-flex rounded-full bg-brand-gold px-3 py-1 text-sm font-semibold text-brand-primary">
+            Best Seller
+          </span>
+        )}
         <h3 className="font-serif text-3xl font-bold text-brand-primary">{product.name}</h3>
         <p className="mt-1 text-base font-semibold leading-relaxed text-brand-burgundy">{product.detail}</p>
         <p className="mt-3 max-w-lg text-base leading-relaxed text-brand-primary/55">
@@ -458,51 +465,58 @@ function OccasionSection() {
   );
 }
 
-function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+function TestimonialSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const slideTimer = window.setInterval(() => {
+      setActiveSlide((currentSlide) => (currentSlide + 1) % 5);
+    }, 5000);
+
+    return () => window.clearInterval(slideTimer);
+  }, []);
+
   return (
-    <article className="w-[280px] shrink-0 rounded-2xl bg-brand-secondary p-4 shadow-[0_12px_30px_rgba(56,34,29,0.06)] sm:w-[380px] sm:p-6">
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-brand-burgundy font-serif font-bold text-brand-secondary">
-            {testimonial.initials}
-          </span>
-          <div>
-            <h3 className="text-base font-semibold text-brand-primary">{testimonial.name}</h3>
-            <p className="text-base leading-relaxed text-brand-primary/45">{testimonial.time}</p>
-          </div>
+    <section id="testimoni" className="bg-brand-secondary px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="section-title text-brand-primary">Apa Kata Mereka?</h2>
+        <div className="relative mx-auto mt-10 max-w-5xl overflow-hidden px-1 pb-4">
+          <motion.div
+            className="flex"
+            animate={{ x: `${-activeSlide * 100}%` }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          >
+            {Array.from({ length: 5 }, (_, slideIndex) => (
+              <div
+                key={`testimoni-slide-${slideIndex + 1}`}
+                className="grid min-w-full grid-cols-1 gap-6 px-2 md:grid-cols-2 md:gap-8"
+              >
+                {[0, 1].map((offset) => {
+                  const imageIndex = (slideIndex + offset) % 5;
+
+                  return (
+                    <div
+                      key={`testimoni-${imageIndex + 1}`}
+                      className={`relative min-w-0 ${offset === 1 ? "hidden md:block" : ""}`}
+                    >
+                      <Image
+                        src={`/testimoni-${imageIndex + 1}.png`}
+                        alt={`Testimoni pelanggan ${imageIndex + 1} Bolu Ketan Hitam Bogor`}
+                        width={501}
+                        height={626}
+                        quality={85}
+                        className="h-auto w-full rounded-2xl shadow-lg"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </motion.div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-brand-secondary/20 to-transparent sm:w-16" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-brand-secondary/20 to-transparent sm:w-16" />
         </div>
-        <span className="whitespace-nowrap text-base text-brand-gold" aria-label="5 dari 5 bintang">
-          ★★★★★
-        </span>
       </div>
-          <p className="mt-6 font-serif text-lg leading-relaxed text-brand-primary/80">
-        “{testimonial.quote}”
-      </p>
-    </article>
-  );
-}
-
-function TestimonialMarquee() {
-  const loop = [...testimonials, ...testimonials];
-
-  return (
-    <section id="testimoni" className="overflow-hidden bg-[#f5eee5] px-0 py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto mb-8 max-w-7xl px-4 sm:mb-10 sm:px-6 lg:px-10">
-        <p className="eyebrow">Kata mereka</p>
-        <h2 className="section-title mt-3">Rasa yang tinggal di hati.</h2>
-      </div>
-      <motion.div
-        className="flex w-max gap-5 pl-6"
-        animate={{ x: [0, -((360 + 20) * testimonials.length)] }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-      >
-        {loop.map((testimonial, index) => (
-          <TestimonialCard
-            key={`${testimonial.name}-${index}`}
-            testimonial={testimonial}
-          />
-        ))}
-      </motion.div>
     </section>
   );
 }
@@ -568,7 +582,7 @@ export default function Home() {
       <TrustSection />
       <ProductSection />
       <OccasionSection />
-      <TestimonialMarquee />
+      <TestimonialSection />
       <ContactSection />
       <footer className="bg-brand-primary px-6 py-8 text-center text-base leading-relaxed text-brand-secondary/50">
         © 2024 Bolu Ketan Hitam Bogor. Dibuat dengan rasa.
