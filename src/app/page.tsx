@@ -117,7 +117,7 @@ function Navbar() {
   ].join(" ");
   const desktopLinksClassName = [
     "hidden items-center gap-8 text-base font-semibold md:flex",
-    scrolled ? "text-brand-primary/75" : "text-brand-secondary/80",
+    scrolled ? "text-brand-primary" : "text-brand-secondary",
   ].join(" ");
   const menuButtonClassName = [
     "grid h-9 w-9 place-items-center rounded-full border text-base md:hidden sm:h-10 sm:w-10 sm:text-lg",
@@ -153,7 +153,7 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-brand-gold"
+              className="transition-colors hover:underline"
             >
               {link.label}
             </a>
@@ -183,7 +183,7 @@ function Navbar() {
 
       {menuOpen && (
         <div className="border-t border-brand-primary/10 px-6 pb-5 pt-2 md:hidden">
-          <div className="flex flex-col gap-4 text-base font-semibold text-brand-primary/75">
+          <div className="flex flex-col gap-4 text-base font-semibold text-brand-primary">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} onClick={handleMenuClose}>
                 {link.label}
@@ -200,7 +200,7 @@ function HeroSection() {
   return (
     <section
       id="beranda"
-      className="relative isolate overflow-hidden bg-brand-primary text-brand-secondary"
+      className="relative isolate overflow-hidden bg-brand-burgundy text-brand-secondary"
     >
       <div className="mx-auto grid min-h-[700px] max-w-7xl items-center gap-8 px-4 pb-24 pt-28 sm:gap-12 sm:px-6 sm:pb-28 sm:pt-36 lg:min-h-[760px] lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:pb-40 lg:pt-40">
         <motion.div
@@ -209,15 +209,15 @@ function HeroSection() {
           transition={{ duration: 0.7 }}
           className="relative z-10 max-w-xl"
         >
-          <p className="mb-6 font-script text-2xl text-brand-gold">
+          <p className="mb-6 font-script text-2xl text-brand-secondary">
             Dibuat dengan hati, dari Bogor
           </p>
           <h1 className="font-serif text-5xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
-            Cita rasa otentik<span className="text-brand-gold">...</span>
+            Cita rasa otentik<span className="text-brand-secondary">...</span>
             <br />
-            <span className="text-brand-gold">Bikin nagih</span> dari gigitan pertama.
+            <span className="text-brand-secondary">Bikin nagih</span> dari gigitan pertama.
           </h1>
-          <p className="mt-7 max-w-md text-lg leading-relaxed text-brand-secondary/70">
+          <p className="mt-7 max-w-md text-lg leading-relaxed text-brand-secondary">
             Bolu ketan hitam yang lembut, legit, dan selalu berhasil menghangatkan
             suasana. Resep rumahan, rasa yang tak terlupakan.
           </p>
@@ -231,8 +231,8 @@ function HeroSection() {
             Hubungi Kami Sekarang
             <HiArrowUpRight />
           </a>
-          <div className="mt-10 flex items-center gap-3 text-base leading-relaxed text-brand-secondary/55 sm:mt-12 sm:gap-4">
-            <span className="h-px w-8 shrink-0 bg-brand-gold sm:w-10" />
+          <div className="mt-10 flex items-center gap-3 text-base leading-relaxed text-brand-secondary sm:mt-12 sm:gap-4">
+            <span className="h-px w-8 shrink-0 bg-brand-secondary sm:w-10" />
             Dipanggang segar setiap hari
           </div>
         </motion.div>
@@ -251,17 +251,17 @@ function HeroSection() {
               priority
             />
           </div>
-          <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/15 bg-brand-primary/80 px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
+          <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/30 bg-brand-primary px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
             <div className="flex items-center gap-2">
-              <p className="font-serif text-2xl leading-none text-brand-gold">5/5</p>
+              <p className="font-serif text-2xl leading-none text-brand-secondary">5/5</p>
               <span
-                className="text-sm tracking-[0.16em] text-brand-gold"
+                className="text-sm tracking-[0.16em] text-brand-secondary"
                 aria-label="5 dari 5 bintang"
               >
                 ★★★★★
               </span>
             </div>
-            <p className="mt-2 border-t border-brand-secondary/15 pt-2 text-[11px] uppercase leading-tight tracking-[0.16em] text-brand-secondary/60">
+            <p className="mt-2 border-t border-brand-secondary/30 pt-2 text-[11px] uppercase leading-tight tracking-[0.16em] text-brand-secondary">
               dari pelanggan kami
             </p>
           </div>
@@ -277,12 +277,12 @@ function IntroSection() {
     <section id="cerita" className="bg-brand-secondary px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-10 sm:gap-16 lg:grid-cols-2">
         <div>
-          <p className="font-script text-xl text-brand-burgundy">Dari Resep Keluarga</p>
+          <p className="font-script text-xl text-brand-primary">Dari Resep Keluarga</p>
           <h2 className="section-title mt-4">Untuk Momen yang Lebih Bermakna</h2>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-brand-primary/65">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-brand-primary">
             Bukan sekadar soal rasa, tapi tentang kasih sayang, kehangatan, dan nostalgia masa kecil yang ingin kami bagikan kembali di setiap gigitan.
           </p>
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-brand-primary/65">
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-brand-primary">
             Kami tidak hanya ingin berbisnis. Kami ingin UMKM rumahan ini terus bertumbuh, naik kelas, dan bisa ikut memutar roda ekonomi serta membuka lapangan pekerjaan bagi lebih banyak orang.
           </p>
         </div>
@@ -375,7 +375,7 @@ function ProductItem({ product }: { product: Product }) {
         )}
         <h3 className="font-serif text-3xl font-bold text-brand-primary">{product.name}</h3>
         <p className="mt-1 text-base font-semibold leading-relaxed text-brand-burgundy">{product.detail}</p>
-        <p className="mt-3 max-w-lg text-base leading-relaxed text-brand-primary/55">
+        <p className="mt-3 max-w-lg text-base leading-relaxed text-brand-primary">
           {product.notes}
         </p>
       </div>
@@ -447,7 +447,7 @@ function OccasionSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col items-start gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
           <div>
-            <p className="eyebrow text-brand-gold">Lebih dari sekadar kue</p>
+            <p className="eyebrow !text-brand-secondary">Lebih dari sekadar kue</p>
             <h2 className="section-title mt-3 text-brand-secondary">
               Cocok untuk berbagai
               <br className="hidden sm:block" /> momen spesial.
@@ -538,7 +538,7 @@ function ContactSection() {
             Sapa kami,
             <br />kami siap membantu.
           </h2>
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-brand-primary/70 sm:mt-9">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-brand-primary sm:mt-9">
             {contactDetails.map(({ icon: Icon, label }) => (
               <p key={label} className="flex items-center gap-4">
                 <Icon className="text-xl text-brand-burgundy" />
@@ -584,7 +584,7 @@ export default function Home() {
       <OccasionSection />
       <TestimonialSection />
       <ContactSection />
-      <footer className="bg-brand-primary px-6 py-8 text-center text-base leading-relaxed text-brand-secondary/50">
+      <footer className="bg-brand-primary px-6 py-8 text-center text-base leading-relaxed text-brand-secondary">
         © 2024 Bolu Ketan Hitam Bogor. Dibuat dengan rasa.
       </footer>
     </main>

@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #38221D;
-  --color-brand-secondary: #FDFBF7;
-  --color-brand-burgundy: #6B2723;
-  --color-brand-gold: #D4A373;
+  --color-brand-primary: #38221D; /* Dark Chocolate (Main Text) */
+  --color-brand-secondary: #FFF6E8; /* Warm Vanilla Cream (Main Background) */
+  --color-brand-burgundy: #9C2E26; /* Vibrant Maroon (Accent Background/Buttons) */
+  --color-brand-gold: #D4A373; /* Gold accents */
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans: var(--font-geist-sans), Arial, sans-serif;
   --font-script: "Segoe Script", "Bradley Hand", cursive;
 }
 
 :root { scroll-behavior: smooth; }
-body { background: #FDFBF7; color: #38221D; font-family: var(--font-sans); }
+body { background: var(--color-brand-secondary); color: var(--color-brand-primary); font-family: var(--font-sans); }
 .font-serif { font-family: var(--font-serif); }
 .font-script { font-family: var(--font-script); }
-.eyebrow { color: #6B2723; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
+.eyebrow { color: var(--color-brand-burgundy); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
 .section-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 0.98; }
