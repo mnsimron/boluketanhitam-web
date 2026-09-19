@@ -13,22 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://boluketanhitambogor.vercel.app/"),
-  title: "Bolu Ketan Hitam Bogor | Resep Jadul",
-  description: "Bolu ketan hitam lembut dan legit, dibuat dengan resep keluarga. Cita rasa otentik yang bikin nagih dari gigitan pertama.",
+  metadataBase: new URL("https://boluketanhitambogor.com"),
+  title: "Bolu Ketan Hitam Bogor - Cita Rasa Otentik Resep Jadul",
+  description: "Cari oleh-oleh khas Bogor? Cobain Bolu Ketan Hitam dengan tekstur lumer dan resep jadul yang otentik. Cocok untuk hantaran, ulang tahun, dan cemilan keluarga.",
+  keywords: [
+    "bolu ketan",
+    "bolu ketan hitam",
+    "bolu ketan hitam bogor",
+    "oleh-oleh bogor",
+    "kue tradisional bogor",
+    "bolu jadul",
+  ],
   icons: {
     icon: "/icon.png",
   },
   openGraph: {
-    title: "Bolu Ketan Hitam Bogor | Resep Jadul",
-    description: "Bolu ketan hitam lembut dan legit, dibuat dengan resep keluarga. Cita rasa otentik yang bikin nagih dari gigitan pertama.",
-    url: "https://boluketanhitambogor.vercel.app/",
+    title: "Bolu Ketan Hitam Bogor - Oleh-oleh Khas Kota Hujan",
+    description: "Pesan sekarang! Bolu ketan hitam lumer premium, dibuat dari resep jadul keluarga.",
+    url: "https://boluketanhitambogor.com",
     siteName: "Bolu Ketan Hitam Bogor",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/icon.png",
+        url: "https://boluketanhitambogor.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Bolu Ketan Hitam Bogor",
@@ -37,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bolu Ketan Hitam Bogor | Resep Jadul",
-    description: "Bolu ketan hitam lembut dan legit, dibuat dengan resep keluarga. Cita rasa otentik yang bikin nagih dari gigitan pertama.",
-    images: ["/icon.png"],
+    title: "Bolu Ketan Hitam Bogor - Oleh-oleh Khas Kota Hujan",
+    description: "Pesan sekarang! Bolu ketan hitam lumer premium, dibuat dari resep jadul keluarga.",
+    images: ["https://boluketanhitambogor.com/og-image.jpg"],
   },
 };
 
