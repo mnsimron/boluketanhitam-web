@@ -242,15 +242,21 @@ function HeroSection() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="relative mx-auto h-[300px] w-full max-w-[570px] sm:h-[390px] lg:h-[590px]"
+          className="relative mx-auto aspect-square w-full max-w-[570px]"
         >
           <div className="absolute inset-8 rotate-3 rounded-[45%] bg-brand-gold/15 blur-sm" />
-          <div className="absolute inset-0 overflow-hidden rounded-[45%_45%_20%_20%] shadow-2xl shadow-black/30">
-            <ImageFrame
-              src="/boluketanhitam-12.png"
-              alt="Potongan bolu ketan hitam dengan taburan kelapa"
-              priority
-            />
+          <div className="absolute inset-0 overflow-hidden rounded-[20%_20%_20%_20%] shadow-2xl shadow-black/30">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-label="Video tekstur lumer bolu ketan hitam"
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src="/hero-lumer.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-brand-primary/30" />
           </div>
           <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/30 bg-brand-primary px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
             <div className="flex items-center gap-2">
