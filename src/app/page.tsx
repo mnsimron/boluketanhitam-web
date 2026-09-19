@@ -66,7 +66,7 @@ const trustPoints = [
 
 const moments = [
   { title: "Kumpul keluarga", image: "/boluketanhitam-6.png" },
-  { title: "Oleh-oleh dari Bogor", image: "/boluketanhitam-8.png" },
+  { title: "Oleh-oleh Bogor", image: "/boluketanhitam-8.png" },
   { title: "Teman berbagi cerita", image: "/boluketanhitam-9.png" },
   { title: "Hadiah yang berkesan", image: "/boluketanhitam-7.png" },
 ];
@@ -212,11 +212,12 @@ function HeroSection() {
           <p className="mb-6 font-script text-2xl text-brand-secondary">
             Dibuat dengan hati, dari Bogor
           </p>
-          <h1 className="font-serif text-5xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
+          <h1 className="sr-only">Bolu Ketan Hitam Bogor - Cita Rasa Otentik Resep Jadul</h1>
+          <p className="font-serif text-5xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
             Cita rasa otentik<span className="text-brand-secondary">...</span>
             <br />
             <span className="text-brand-secondary">Bikin nagih</span> dari gigitan pertama.
-          </h1>
+          </p>
           <p className="mt-7 max-w-md text-lg leading-relaxed text-brand-secondary">
             Bolu ketan hitam yang lembut, legit, dan selalu berhasil menghangatkan
             suasana. Resep rumahan, rasa yang tak terlupakan.
@@ -280,7 +281,7 @@ function IntroSection() {
           <p className="font-script text-xl text-brand-primary">Dari Resep Keluarga</p>
           <h2 className="section-title mt-4">Untuk Momen yang Lebih Bermakna</h2>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-brand-primary">
-            Bukan sekadar soal rasa, tapi tentang kasih sayang, kehangatan, dan nostalgia masa kecil yang ingin kami bagikan kembali di setiap gigitan.
+            Bukan sekadar soal rasa, Bolu Ketan Hitam ini hadir tentang kasih sayang, kehangatan, dan nostalgia masa kecil yang ingin kami bagikan kembali di setiap gigitan.
           </p>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-brand-primary">
             Kami tidak hanya ingin berbisnis. Kami ingin UMKM rumahan ini terus bertumbuh, naik kelas, dan bisa ikut memutar roda ekonomi serta membuka lapangan pekerjaan bagi lebih banyak orang.
@@ -305,10 +306,12 @@ function IntroSection() {
 }
 
 function TrustCard({
+  title,
   text,
   image,
   index,
 }: {
+  title: string;
   text: string;
   image: string;
   index: number;
@@ -321,6 +324,7 @@ function TrustCard({
       transition={{ delay: index * 0.08 }}
       className="overflow-hidden rounded-2xl bg-brand-secondary shadow-[0_12px_30px_rgba(56,34,29,0.06)]"
     >
+      <h3 className="sr-only">{title}</h3>
       <div className="relative h-36">
         <ImageFrame src={image} alt={text} />
       </div>
@@ -398,7 +402,7 @@ function ProductSection() {
       <div className="mx-auto max-w-7xl">
         <div className="max-w-xl">
           <p className="eyebrow">Pilih favoritmu</p>
-          <h2 className="section-title mt-3">Produk unggulan kami.</h2>
+          <h2 className="section-title mt-3">Produk Unggulan Bolu Ketan.</h2>
         </div>
         <div className="mt-8 divide-y divide-brand-primary/10 sm:mt-12">
           {products.map((product) => (
