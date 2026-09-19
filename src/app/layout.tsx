@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "bolu jadul",
   ],
   icons: {
-    icon: "/icon.png",
+    icon: "/icon-bolu.jpg",
   },
   openGraph: {
     title: "Bolu Ketan Hitam Bogor - Oleh-oleh Khas Kota Hujan",
