@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://boluketanhitambogor.com/og-image.jpg",
+        url: "https://boluketanhitambogor.com/icon-bolu.jpg",
         width: 1200,
         height: 630,
         alt: "Bolu Ketan Hitam Bogor",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bolu Ketan Hitam Bogor - Oleh-oleh Khas Kota Hujan",
     description: "Pesan sekarang! Bolu ketan hitam lumer premium, dibuat dari resep jadul keluarga.",
-    images: ["https://boluketanhitambogor.com/og-image.jpg"],
+    images: ["https://boluketanhitambogor.com/icon-bolu.jpg"],
   },
 };
 
