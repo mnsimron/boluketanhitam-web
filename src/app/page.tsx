@@ -256,7 +256,6 @@ function HeroSection() {
             >
               <source src="/hero-lumer.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-brand-primary/30" />
           </div>
           <div className="absolute -bottom-3 left-2 rounded-2xl border border-brand-secondary/30 bg-brand-primary px-3 py-3 backdrop-blur-md sm:-left-3 sm:px-5 sm:py-4">
             <div className="flex items-center gap-2">
