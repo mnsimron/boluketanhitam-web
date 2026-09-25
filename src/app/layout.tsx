@@ -13,6 +13,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  name: "Bolu Ketan Hitam Bogor",
+  description: "Bolu ketan hitam lembut dan legit, dibuat dengan resep keluarga. Oleh-oleh khas Bogor.",
+  image: "https://www.boluketanhitambogor.com/icon-bolu.jpg",
+  url: "https://www.boluketanhitambogor.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bogor",
+    addressRegion: "Jawa Barat",
+    addressCountry: "ID",
+  },
+  priceRange: "Rp",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://boluketanhitambogor.com"),
   title: "Bolu Ketan Hitam Bogor - Cita Rasa Otentik Resep Jadul",
@@ -60,6 +76,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RRRL3N9DX9"
           strategy="afterInteractive"
